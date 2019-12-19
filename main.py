@@ -97,6 +97,11 @@ def main() :
 	config = tf.ConfigProto()
 	config.gpu_options.allow_growth = True
 	
+	if not os.path.isdir("results") :
+		os.makedirs('results')
+	if not os.path.isdir("logs") :
+		os.makedirs('logs')
+	
 	nowdate = datetime.datetime.now().strftime('%Y-%m-%d-%H-%M-%S')
 	os.makedirs('results/' + nowdate)
 	os.makedirs('results/' + nowdate + '/generated')
